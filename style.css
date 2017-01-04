@@ -1,8 +1,9 @@
 #navigation-bar {
     float: top;
     background-color: #990099;
-    border-width: 3px;
-    border-style: ridge;
-    border-color: red;
+    border: 3px ridge red;
+    /*border-width: 3px;*/
+    /*border-style: ridge;*/
+    /*border-color: red;*/
     width: 400px;
 }
