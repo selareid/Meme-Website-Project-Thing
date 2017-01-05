@@ -3,12 +3,25 @@
     <head>
         <meta charset="utf-8">
         <title>Page Doesn't Exist</title>
-        <!--<style>@import "style.css";</style>-->
+        <link rel="stylesheet" href="style.css" media="screen, projection">
+        <script src="jQuery.js"></script>
     </head>
     <body>
 
+    <div class="side-strip"></div>
+    <div class="background"></div>
+
+    <div id="navigation-bar-filler"></div>
+
+    <div class="content">
     <h1>Page Doesn't Exist</h1>
     <a href="index.html">Click To Go To Home Page</a>
+    </div>
 
     </body>
+    <script>
+        $(function() {
+            $('#navigation-bar-filler').load('navigation-bar.html');
+        });
+    </script>
 </html>
