@@ -1,14 +1,3 @@
-.navigation-bar {
-    float: top;
-    background-color: #8cbc00;
-    border: 3px solid #b8de6e;
-    /*border-width: 3px;*/
-    /*border-style: ridge;*/
-    /*border-color: red;*/
-    width: auto;
-    margin-left: 45px;
-}
-
 .content {
     margin-left:100px;
     margin-bottom: 10px;
@@ -34,7 +23,7 @@
     top: 0;
     left: 0;
     position: fixed;
-    background-color: #e6313c;
+    background-color: #e50000;
     width: 100%;
     height: 100%;
     z-index: -100;
