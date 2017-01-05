@@ -75,17 +75,18 @@
 
     var objectsToLoad = objectOfEntries;
 
-    for (var objectToLoad in objectsToLoad) {
+    for (let objectToLoad in objectsToLoad) {
         console.log(objectToLoad);
 
-        var div = document.createElement("div");
-        div.id = objectToLoad;
+        let div = document.createElement("div");
+        div.setAttribute("id", objectToLoad);
         div.style.width = "1000px";
         div.style.height = "1000px";
 
         $(function() {
             $('#' + objectToLoad).load(eval(objectsToLoad[objectToLoad]));
         });
+
 
         document.getElementById("main").appendChild(div);
     }
