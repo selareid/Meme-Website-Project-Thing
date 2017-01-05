@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Daniel Reid</title>
         <link rel="stylesheet" href="style.css" media="screen, projection">
+        <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
     </head>
     <body>
 
@@ -15,13 +16,16 @@
         <a href="/#"><h1>Home</h1></a>
     </div>
 
-    function load_home() {
-    document.getElementById("content").innerHTML='<object type="text/html" data="home.html" ></object>';
-    }
+    <div id="Section1"></div>
 
     <div class="links">
         <p>Links:</p>
     </div>
 
     </body>
+<script>
+    $(function() {
+            $('#Section1').load('load-content.html');
+    });
+</script>>
 </html>
