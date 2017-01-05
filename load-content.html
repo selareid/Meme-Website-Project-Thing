@@ -80,8 +80,7 @@
 
         let div = document.createElement("div");
         div.setAttribute("id", objectToLoad);
-        div.style.width = "1000px";
-        div.style.height = "1000px";
+        div.setAttribute("class", "content");
 
         $(function() {
             $('#' + objectToLoad).load(eval(objectsToLoad[objectToLoad]));
