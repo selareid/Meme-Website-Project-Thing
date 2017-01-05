@@ -8,47 +8,47 @@
 </body>
 
 <script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function readTextFile(file)
-    {
-        var rawFile = new XMLHttpRequest();
-        rawFile.open("GET", file, false);
-        rawFile.onreadystatechange = function ()
-        {
-            if(rawFile.readyState === 4)
-            {
-                if(rawFile.status === 200 || rawFile.status == 0)
-                {
-                    var allText = rawFile.responseText;
-                    console.log(allText);
-                }
+    var data;
+    function readTextFile(URL) {
+        $.ajax({
+            async: false,
+            url: URL,
+            dataType: "text",
+            success: function (text) {
+//                $(".text").html(data);
+                console.log('text from file = ' + text);
+                data = text;
             }
-        };
-        rawFile.send(null);
+        });
     }
 
-    readTextFile("https://starwar15432.github.io/index.txt");
+    /*
+     * takes a string and turns it into an object
+     * exp:
+     * "a:1,b:2"
+     * becomes
+     * {a:1, b:2}
+     * sorta thing
+     */
+    function stringToObject(string) {
+        if (string) {
+            var split = string.split(',');
+            var newObj = {};
+            for (let split_it of split) {
+                var split_split_it = split_it.split(':');
+
+                newObj[split_split_it[0]] = split_split_it[1];
+            }
+            console.log('new object:');
+            console.log(newObj);
+
+            return newObj;
+        }
+    }
+
+    readTextFile('index.txt');
+
+    console.log(stringToObject(data));
+
 
 </script>
