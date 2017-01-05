@@ -1,0 +1,43 @@
+<head>
+    <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+</head>
+<body>
+<p>hello</p>
+
+<script>
+    var showMessage = function(options)
+            {	if (typeof options !== 'object')
+                options = { message: 'Parameter not an object', error: true };
+                options.message = options.message || 'No message specified';
+                options.error = options.error || false;
+                $('#Messages')
+                        .append(options.error ? 'Error: ' : '')
+                        .append(options.message)
+                        .append('<br />');
+            },
+
+
+
+            $.when(
+            showMessage({ message: 'Starting processing' }),
+            loadSection({ selector: '#Section1', url: 'Content1b.html',
+                dynamic: true }),
+            loadSection({ selector: '#Section2', url: 'Content2.html' }),
+            loadSection({ selector: '#Section3', url: 'Content3a.html',
+                dynamic: true }),
+            showMessage({ message: 'Done with processing' })
+    )
+            .done(function()
+            {
+            })
+            .fail(function(result)
+            {	$('#Messages').append('Failure!<br />')
+                    .append('Result:' + result.statusText + '<br />');
+            })
+            .always(function()
+            {	$('#Proceed').removeAttr('disabled');
+});
+
+</script>
+
+</body>
