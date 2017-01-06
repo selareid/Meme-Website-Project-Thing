@@ -52,6 +52,15 @@
     margin-top: 5px;
 }
 
+.steamLink:before {
+    content: "\f1b7";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    margin-right: 5px;
+}
+
 .githubLink:before {
     content: "\f09b";
     font-family: FontAwesome;
