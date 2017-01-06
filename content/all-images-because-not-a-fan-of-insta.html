@@ -31,20 +31,10 @@
     <h1>1</h1>
 </div>
 
+
 <script>
 
-    var folder = "/images/";
 
-    $.ajax({
-        url : folder,
-        success: function (data) {
-            $(data).find("a").attr("href", function (i, val) {
-                if( val.match(/\.(jpe?g|png|gif)$/) ) {
-                    $("#A-Bunch-Of-Images").append( "<img src='"+ folder + val +"'>" );
-                }
-            });
-        }
-    });
 
 </script>
 
