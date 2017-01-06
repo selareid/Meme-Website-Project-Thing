@@ -44,3 +44,28 @@
 .back-to-top:hover {
     background-color: rgba(135, 135, 135, 0.50);
 }
+
+
+
+
+.linkListItem {
+    margin-top: 5px;
+}
+
+.githubLink:before {
+    content: "\f09b";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    margin-right: 5px;
+}
+
+.screepsLink:before {
+    content: "\f0c1";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    margin-right: 5px;
+}
