@@ -26,8 +26,9 @@
     }
 
     .img {
-        border-width: 3px;
-        border-color: #111111;
+        border: 1px solid black;
+        margin: 1px;
+    ;
     }
 
     #thingy {
@@ -62,7 +63,7 @@
             img.setAttribute("src", "https://starwar15432.github.io/Files/archives/images/" + imgName + i + imgFormat);
             img.setAttribute("width", "304");
             img.setAttribute("width", "228");
-            img.classList.add('img');
+            img.setAttribute("class", "img");
             document.getElementById("A-Bunch-Of-Images").appendChild(img);
         }
 
