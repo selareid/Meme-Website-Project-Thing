@@ -21,58 +21,60 @@
 
     #A-Bunch-Of-Images {
         display:inline-block;
-        background-color: red;
-        height: 100px;
+        background-color: #ffffff;
+        height: auto;
+    }
+
+    .img {
+        border-width: 3px;
+        border-color: #111111;
+    }
+
+    #thingy {
+        height: auto;
     }
 </style>
 
 <body>
-<div class="content-in" id="A-Bunch-Of-Images">
-    <h1>1</h1>
-</div>
 
+<div class="content-in" id="thingy">
+    <h1>I just dumped some images here</h1>
+    <div id="A-Bunch-Of-Images"></div>
+    <small><small>Posted: 4:00PM, Friday, 6 January</small></small>
+</div>
 
 <script>
 
-    var bCheckEnabled = true;
-    var bFinishCheck = false;
+    var imgName = 'IMG_';
+    var imgFormat = '.jpeg';
+    var startingImgNumb = 1;
+    var knownImageAmount = 118;
 
-    var img;
-    var imgArray = new Array();
-    var i = 1;
 
-    var myInterval = setInterval(loadImage, 1);
+    function loadImages(number) {
+        console.log(number);
 
-    function loadImage() {
+        for (i = number; i > startingImgNumb; i--){
+            let imgNamed = imgName + i;
+            console.log(imgNamed);
 
-        if (bFinishCheck) {
-            clearInterval(myInterval);
-            alert('Loaded ' + i + ' image(s)!)');
-            return;
-        }
-
-        if (bCheckEnabled) {
-
-            bCheckEnabled = false;
-
-            img = new Image();
-            img.onload = fExists;
-            img.onerror = fDoesntExist;
-            img.src = 'https://starwar15432.github.io/images/archives/' + 'IMG_' + i + '.jpeg';
-            console.log(i);
+            let img = document.createElement("IMG");
+            img.setAttribute("src", "https://starwar15432.github.io/Files/archives/images/" + imgName + i + imgFormat);
+            img.setAttribute("width", "304");
+            img.setAttribute("width", "228");
+            img.classList.add('img');
+            document.getElementById("A-Bunch-Of-Images").appendChild(img);
         }
 
     }
 
-    function fExists() {
-        imgArray.push(img);
-        i++;
-        bCheckEnabled = true;
+    try {
+        loadImages(knownImageAmount);
+    }
+    catch (err) {
+        console.log(err);
     }
 
-    function fDoesntExist() {
-        bFinishCheck = true;
-    }
 </script>
 
 </body>

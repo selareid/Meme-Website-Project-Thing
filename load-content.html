@@ -70,7 +70,15 @@
 
     readTextFile('index.txt');
 
-    var objectOfEntries = stringToObject(data);
+    function reverse(items){
+        var reversed = Array();
+        for( var key in items ){
+            reversed.unshift(items[key]);
+        }
+        return reversed;
+    }
+
+    var objectOfEntries = reverse(stringToObject(data));
 
     var objectsToLoad = objectOfEntries;
 
