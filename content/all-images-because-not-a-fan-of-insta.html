@@ -34,8 +34,46 @@
 
 <script>
 
+    var imageName = 'IMG_';
+    var bCheckEnabled = true;
+    var bFinishCheck = false;
 
+    var img;
+    var imgArray = new Array();
+    var i = 1;
 
+    var myInterval = setInterval(loadImage, 1);
+
+    function loadImage() {
+
+        if (bFinishCheck) {
+            clearInterval(myInterval);
+            alert('Loaded ' + i + ' image(s)!)');
+            return;
+        }
+
+        if (bCheckEnabled) {
+
+            bCheckEnabled = false;
+
+            img = new Image();
+            img.onload = fExists;
+            img.onerror = fDoesntExist;
+            img.src = 'https://starwar15432.github.io/images/archives/' + imageName + i + '.png';
+
+        }
+
+    }
+
+    function fExists() {
+        imgArray.push(img);
+        i++;
+        bCheckEnabled = true;
+    }
+
+    function fDoesntExist() {
+        bFinishCheck = true;
+    }
 </script>
 
 </body>
