@@ -12,6 +12,10 @@
 
 }
 
+.postFooter {
+    margin: 10px auto 10px auto;
+}
+
 .side-strip {
     position: fixed;
     top: 0;
