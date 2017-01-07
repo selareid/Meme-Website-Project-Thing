@@ -54,10 +54,11 @@
 
     function loadImages(number) {
         console.log(number);
+        var arrayOfLoaded = [];
 
-        for (i = number; i > startingImgNumb; i--){
+        for (i = number; i >= startingImgNumb; i--){
             let imgNamed = imgName + i;
-            console.log(imgNamed);
+            arrayOfLoaded.push(imgNamed);
 
             let img = document.createElement("IMG");
             img.setAttribute("src", "https://starwar15432.github.io/Files/archives/images/" + imgName + i + imgFormat);
@@ -67,6 +68,7 @@
             document.getElementById("A-Bunch-Of-Images").appendChild(img);
         }
 
+        console.log(arrayOfLoaded);
     }
 
     try {
