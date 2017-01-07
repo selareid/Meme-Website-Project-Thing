@@ -26,6 +26,11 @@
     z-index: -99;
 }
 
+.header {
+    margin-left:45px;
+    width: 1000px;
+}
+
 .background {
     background-color: #ffffff;
 }
