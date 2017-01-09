@@ -13,5 +13,5 @@ function runAnalytics() {
 
         ga('create', 'UA-90057219-1', 'auto');
         ga('send', 'pageview');
-        console.log('test');
+        console.log('analytics run');
 }
