@@ -1,21 +1,3 @@
-.content {
-    /*margin-left:100px;*/
-    /*margin-top: 10px;*/
-    display: table;
-    margin: auto;
-}
-
-.content-in {
-    margin: 10px auto;
-    width: 500px;
-    border-bottom: 1px solid #e5e5e5;
-
-}
-
-.postFooter {
-    margin: 10px auto 10px auto;
-}
-
 .side-strip {
     position: fixed;
     top: 0;
@@ -37,57 +19,4 @@
 
 .background {
     background-color: #ffffff;
-}
-
-
-
-
-.back-to-top {
-    position: fixed;
-    bottom: 10px;
-    right: 5px;
-    text-decoration: none;
-    color: #000000;
-    background-color: rgba(235, 235, 235, 0.80);
-    font-size: 12px;
-    padding: 1em;
-    display: none;
-}
-
-.back-to-top:hover {
-    background-color: rgba(135, 135, 135, 0.50);
-}
-
-
-
-
-.linkListItem {
-    margin-top: 5px;
-}
-
-.steamLink:before {
-    content: "\f1b7";
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    margin-right: 5px;
-}
-
-.githubLink:before {
-    content: "\f09b";
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    margin-right: 5px;
-}
-
-.screepsLink:before {
-    content: "\f0c1";
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    margin-right: 5px;
 }
