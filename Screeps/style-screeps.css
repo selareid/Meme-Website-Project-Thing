@@ -1,0 +1,29 @@
+body:not(.suln, .slin, .slian) {
+    display: table;
+    margin: auto;
+}
+
+#screeps-circle-project-content-filler {
+    margin-left: 45px;
+}
+
+#screeps-circle-project-content {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    display: table;
+    margin: auto;
+}
+
+p {
+    display: table;
+    margin: auto;
+}
+
+img {
+    display: table;
+    margin: auto;
+}
