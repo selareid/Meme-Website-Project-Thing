@@ -12,18 +12,3 @@ body:not(.suln, .slin, .slian) {
     margin: auto;
     text-align: center;
 }
-
-h1 {
-    display: table;
-    margin: auto;
-}
-
-p {
-    display: table;
-    margin: auto;
-}
-
-img {
-    display: table;
-    margin: auto;
-}
