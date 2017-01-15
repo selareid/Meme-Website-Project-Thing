@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>QA</title>
+
+        <style>
+            #QAInput {
+                width: 500px;
+                height: 500px;
+            }
+        </style>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div id="thingsToHide">
+        <p id="save"></p>
+
+        <textarea id="QAInput">
+Question1:Answer1,Question2:Answer2</textarea>
+        </div>
+        <br>
+
+        <button id="submitButton" type="button">Click Me!</button>
+
+        <br>
+
+        <p id="Question"></p>
+        <br>
+
+        <input id="answerInput" type="text">
+        <button id="answerButton" type="button">Answer</button>
+        <br>
+
+        <p id="feedback" style="display: none">FeedBack!</p>
+
+    </body>
+    <script>
+        var save = document.getElementById("save");
+        var QAInput = document.getElementById("QAInput");
+        var submitButton = document.getElementById("submitButton");
+        var answerInput = document.getElementById("answerInput");
+        var answerButton = document.getElementById("answerButton");
+        var feedback = document.getElementById("feedback");
+
+        submitButton.onclick = function () {
+            document.getElementById('thingsToHide').style.display = 'none';
+            setQA();
+            document.getElementById("Question").innerHTML = save.innerHTML.split(':')[0];
+        };
+
+        answerButton.onclick = function () {
+            feedback.style.display = 'block';
+            if (answerInput.value.toLowerCase() === save.innerHTML.split(':')[1].toLowerCase()) {
+                feedback.innerHTML = 'Correct Answer!';
+                setTimeout(function(){submitButton.onclick();}, 1000);
+            }
+            else {
+                feedback.innerHTML = 'Incorrect Answer' + '<br>' + ' The correct answer is: ' + '<br>' + save.innerHTML.split(':')[1];
+            }
+        };
+
+        function setQA() {
+            feedback.style.display = 'none';
+            var QA = QAInput.value.split(',')[Math.floor(Math.random()*QAInput.value.split(',').length)];
+            console.log(QA);
+            save.innerHTML = QA;
+            answerInput.value = '';
+        }
+
+
+    </script>
+</html>
