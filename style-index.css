@@ -1,3 +1,24 @@
+#indexContent {
+    display: table;
+    margin: 0 auto;
+}
+
+#projectListDiv {
+    margin-left: 75px;
+    float: left;
+    background-color: #c2c2c2;
+    width: 30vw;
+    height: auto;
+}
+
+#linkListDiv {
+    margin-left: 5vw;
+    display:inline-block;
+    background-color: #c2c2c2;
+    width: 30vw;
+    height: auto;
+}
+
 .QAThingLink:before {
     content: "\f10c";
     font-family: FontAwesome;
