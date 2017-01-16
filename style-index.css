@@ -6,7 +6,7 @@
 #projectListDiv {
     margin-left: 75px;
     float: left;
-    background-color: #c2c2c2;
+    background-color: #ededed;
     width: 30vw;
     height: auto;
 }
@@ -14,7 +14,7 @@
 #linkListDiv {
     margin-left: 5vw;
     display:inline-block;
-    background-color: #c2c2c2;
+    background-color: #ededed;
     width: 30vw;
     height: auto;
 }
