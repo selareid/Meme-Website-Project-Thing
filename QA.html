@@ -1,39 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title>QA</title>
-
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="icon" href="favicon.ico">
+        <meta charset="utf-8">
+        <title>Daniel Reid - QA</title>
+        <link rel="stylesheet" href="style.css" media="screen, projection">
+        <link rel="stylesheet" href="style-header.css" media="screen, projection">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
             #QAInput {
                 width: 500px;
                 height: 500px;
             }
+            #Content {
+                margin-left: 46px;
+            }
         </style>
         <link rel="stylesheet" href="style.css">
+        <script src="jQuery.js"></script>
+        <script src="analytics.js"></script>
     </head>
     <body>
 
-        <div id="thingsToHide">
-        <p id="save"></p>
+        <div class="side-strip"></div>
+        <div class="background"></div>
 
-        <textarea id="QAInput">
-Question1:Answer1,Question2:Answer2</textarea>
+        <div class="header"></div>
+        <div id="navigation-bar-filler"></div>
+
+        <div id="Content">
+            <div id="thingsToHide">
+            <p id="save"></p>
+
+            <textarea id="QAInput">
+    Question1:Answer1,Question2:Answer2</textarea>
+                <br>
+                <button id="submitButton" type="button">Start</button>
+            </div>
+
+            <p id="Question"></p>
             <br>
-            <button id="submitButton" type="button">Start</button>
+
+            <input id="answerInput" type="text">
+            <button id="answerButton" type="button">Answer</button>
+            <br>
+
+            <p id="feedback" style="display: none">FeedBack!</p>
         </div>
-
-        <p id="Question"></p>
-        <br>
-
-        <input id="answerInput" type="text">
-        <button id="answerButton" type="button">Answer</button>
-        <br>
-
-        <p id="feedback" style="display: none">FeedBack!</p>
 
     </body>
     <script>
+        runAnalytics();
+        $(function() {
+            $('#navigation-bar-filler').load('navigation-bar.html');
+            $('.header').load('header.html');
+        });
+
+
         var save = document.getElementById("save");
         var QAInput = document.getElementById("QAInput");
         var submitButton = document.getElementById("submitButton");
