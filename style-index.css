@@ -1,3 +1,21 @@
+.QAThingLink:before {
+    content: "\f10c";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    margin-right: 5px;
+}
+
+.QAThingLink:hover:before {
+    content: "\f140";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    margin-right: 5px;
+}
+
 .linkListItem {
     margin-top: 5px;
 }
