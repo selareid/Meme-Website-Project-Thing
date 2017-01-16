@@ -40,6 +40,7 @@
             and a , to separate Question/Answer combinations
             <br>
             Once ready press Start.
+            <br>
         </p>
 
         <div id="Content">
@@ -91,7 +92,7 @@ Question1:Answer1,Question2:Answer2</textarea>
                 setTimeout(function(){submitButton.onclick();}, 1000);
             }
             else {
-                feedback.innerHTML = 'Incorrect Answer' + '<br>' + ' The correct answer is: ' + '<br>' + save.innerHTML.split(':')[1];
+                feedback.innerHTML = 'Incorrect Answer' + '<br>' + ' The correct answer is: ' + save.innerHTML.split(':')[1] + '<br>' + 'Input the correct answer to continue...';
             }
         };
 
