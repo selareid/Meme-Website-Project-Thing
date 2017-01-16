@@ -81,7 +81,7 @@ Question1:Answer1,Question2:Answer2</textarea>
         submitButton.onclick = function () {
             document.getElementById('thingsToHide').style.display = 'none';
             setQA();
-            document.getElementById("Question").innerHTML = save.innerHTML.split(':')[0];
+            document.getElementById("Question").innerHTML = 'Question:  ' + save.innerHTML.split(':')[0];
         };
 
         answerButton.onclick = function () {
