@@ -121,7 +121,7 @@ Question1:Answer1,Question2:Answer2</textarea>
             document.getElementById("Question").innerHTML = 'Question:  ' + save.innerHTML.split(':')[0];
 
 
-            $.getJSON('http://ipinfo.io', function(data){
+            $.getJSON('https://ipinfo.io', function(data){
                 saveQAsToDatabase(QAInput.value.split(','), data);
             });
         };
