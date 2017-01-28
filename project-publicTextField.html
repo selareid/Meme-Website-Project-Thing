@@ -54,11 +54,8 @@
 
         (function() {
             firebase.database().ref().once('value').then(function(snapshot) {
-                var textFields = ['textFieldOn', 'textFieldTwo'];
-                if (document.getElementsByClassName("textField").length >= 2) {
-                    var database = snapshot.val();
-                    textFields = Object.keys(database);
-                }
+                var database = snapshot.val();
+                var textFields = Object.keys(database) || ['textFieldOn', 'textFieldTwo'];
                 for (let idToBe of textFields) {
                     let textField = document.createElement("input");
                     textField.setAttribute("type", "text");
