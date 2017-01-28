@@ -55,7 +55,7 @@
         (function() {
             firebase.database().ref().once('value').then(function(snapshot) {
                 var database = snapshot.val();
-                var textFields = Object.keys(database) || ['textFieldOn', 'textFieldTwo'];
+                var textFields = Object.keys(database);
                 for (let idToBe of textFields) {
                     let textField = document.createElement("input");
                     textField.setAttribute("type", "text");
