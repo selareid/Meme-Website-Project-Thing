@@ -55,6 +55,24 @@
     margin-right: 5px;
 }
 
+.publicTextFieldLink:before {
+    content: "\f075";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    margin-right: 5px;
+}
+
+.publicTextFieldLink:hover:before {
+    content: "\f27a";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    margin-right: 5px;
+}
+
 .linkListItem {
     margin-top: 5px;
 }
