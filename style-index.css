@@ -37,6 +37,24 @@
     margin-right: 5px;
 }
 
+.drawThingLink:before {
+    content: "\f044";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    margin-right: 5px;
+}
+
+.drawThingLink:hover:before {
+    content: "\f040";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    margin-right: 5px;
+}
+
 .linkListItem {
     margin-top: 5px;
 }
