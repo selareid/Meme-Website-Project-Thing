@@ -1,1 +1,4 @@
-1:"content/05-01-17-First-Post-Ever.html",2:"content/all-images-because-not-a-fan-of-insta.html",haircut-09-01-17:"/content/09-01-17-haircut.html"
+1:"content/05-01-17-First-Post-Ever.html",
+2:"content/all-images-because-not-a-fan-of-insta.html",
+haircut-09-01-17:"/content/09-01-17-haircut.html",
+my-puppy-just-loves-his-sis-07-03-17:"/content/07-03-17-my-puppy-just-loves-his-sis.html"
