@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SelaReid | About</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- import jquery from Google CDN-->
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- import css stylesheet-->
+    <script src="https://kit.fontawesome.com/ff442b5be1.js" crossorigin="anonymous"></script> <!-- imports font awesome kit -->
+  </head>
+  <body>
+    <header id="header" class="outline">
+    </header>
+
+    <section>
+      <article class="outline"> <!-- article for about content -->
+        <div class="article_spacer">
+          <h1>Daniel Reid</h1>
+          <p>I'm into programming and stuff</p>
+          <h4>Find me:</h4>
+
+          <ul id="links_list">
+            <!-- links open in new tab, rel="noreferrer noopener" used for securty -->
+            <li><i class="fab fa-github"></i> <a target="_blank" rel="noreferrer noopener" href="http://github.me.selareid.com">Github</a></li>
+            <li><i class="fas fa-link"></i> <a target="_blank" rel="noreferrer noopener" href="http://screeps.me.selareid.com">Screeps</a></li>
+            <li><i class="fab fa-steam"></i> <a target="_blank" rel="noreferrer noopener" href="http://steam.me.selareid.com">Steam</a></li>
+            <li><p><i class="fas fa-envelope"></i> web@selareid.com</p></li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <footer id="footer" class="outline">
+    </footer>
+
+    <script>
+      // load header, footer content using jquery
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+    </script>
+  </body>
+</html>

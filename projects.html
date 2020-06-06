@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SelaReid | Projects</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- import jquery from Google CDN-->
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- import css stylesheet-->
+  </head>
+  <body>
+    <header id="header" class="outline">
+    </header>
+
+    <section id="projects_section"> <!-- projects section where projects articles get loaded into -->
+    </section>
+
+    <footer id="footer" class="outline">
+    </footer>
+
+    <script>
+      //load header, footer content using jquery
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+
+      let params = new window.URLSearchParams(window.location.search); //get url queries
+      let query_string = params.get('qry'); //string for project url in projects folder "projects/______.html"
+
+      if (query_string) { //if a query is given, load it
+        //'back' button
+        $(`<article class="outline"><div class="article_spacer"><a class="query_back" href="projects.html">ALL PROJECTS</a></div></article>`).appendTo("#projects_section");
+
+        //load the queried project
+        let post_element = $(`<article class="outline" id="0_${query_string}"></article>`).load(`projects/${query_string}.html`, () => {
+          //add link to the post on its own
+          $(`<a class="post_link" title="${query_string}" href="projects.html?qry=${query_string}">#</a>`).prependTo(post_element.find("div"));
+        });
+        post_element.appendTo("#projects_section"); //add the post to the content section
+      }
+      else {
+        //gets the json array of project file names from projects/projects.json
+        $.ajax({
+          url: "projects/projects.json",
+          dataType: "json",
+          success: (response) => {
+            $.each(response, (item_it) => { //loop over each item in the projects array
+              let item = response[item_it];
+              //add item to new article element and append to projects_section
+              let post_element = $(`<article class="outline" id="${item_it}_${item}"></article>`).load(`projects/${item}.html`, () => {
+                //add link to the post on its own
+                $(`<a class="post_link" title="${item}" href="projects.html?qry=${item}">#</a>`).prependTo(post_element.find("div"));
+              });
+              post_element.appendTo("#projects_section"); //add the post to the content section
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
