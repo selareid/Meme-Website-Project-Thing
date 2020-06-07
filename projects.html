@@ -31,11 +31,20 @@
         $(`<article class="outline"><div class="article_spacer"><a class="query_back" href="projects.html">ALL PROJECTS</a></div></article>`).appendTo("#projects_section");
 
         //load the queried project
-        let post_element = $(`<article class="outline" id="0_${query_string}"></article>`).load(`projects/${query_string}.html`, () => {
-          //add link to the post on its own
-          $(`<a class="post_link" title="${query_string}" href="projects.html?qry=${query_string}">#</a>`).prependTo(post_element.find("div"));
+        let post_element = $(`<article class="outline" id="0_${query_string}"></article>`).load(`projects/${query_string}.html`, (response, status, xhr) => {
+          if (status == "error") { //error loading the post
+            //load an error message
+            $(`<article class="outline" id="0_"><div class="article_spacer">
+            <h1>Oops! Looks like there was an error loading that post</h1>
+            <p>ERROR: ${xhr.status} ${xhr.statusText}</p>
+            </div></article>`).appendTo("#projects_section");
+          }
+          else { //post found
+            //add link to the post on its own
+            $(`<a class="post_link" title="${query_string}" href="projects.html?qry=${query_string}">#</a>`).prependTo(post_element.find("div"));
+            post_element.appendTo("#projects_section"); //add the post to the content section
+          }
         });
-        post_element.appendTo("#projects_section"); //add the post to the content section
       }
       else {
         //gets the json array of project file names from projects/projects.json
