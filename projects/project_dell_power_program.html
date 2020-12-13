@@ -1,0 +1,25 @@
+<div class="article_spacer"> <!-- keeps padding/spacing consistent -->
+  <h2>Controlling Dell Server Power with Nodejs</h2>
+  <p>Recently, I acquired a dell r610. I've mainly been using it as a plex media server with sonarr and qbittorrent.
+  However, with the coming summer, my room (and therefore my server closet) have had increased ambient temperature. This
+  has led to the r610's temperature increasing and the fans spinning up uncomfortably. Because of this, I have taken to turning off
+  the server when it is not in use (which is most of the time). The main way I have been turning the server on and off has been through
+  the idrac interface. This consists of the following: navigate to the idrac page; log in; navigate to the power control page;
+  then, hit the apply button (the option to turn on/off is autoselected). I find this to be a pain as it requires not just a
+  number of steps, but also mouse movement to select buttons in idrac. I personally dislike moving my hand from the keyboard
+  to the mouse.</p>
+  <img src="images/project_dell_power_program_idrac.png" alt="what we plan to replace">
+  <p>So, I decided to make a program that met my requirements. The program must: allow powering on and off of the r610;
+  it must allow me to do so with minimal mouse movement; furthermore, I should be able to access it from any of my devices
+  on my local network. I decided to create a simple web page with a Nodejs backend that would user ipmitool to turn on,
+  turn off, and query the server's power state.
+  <br> Code is available <a href="https://github.com/starwar15432/node_dell_power/blob/master/app.js">HERE</a>
+  <br> You can see a screenshot of the finished product below.
+  <br> It's simple and consists of some text given information on the r610's power status, an on button, and an off button.
+  These buttons link to <code>/on</code> and <code>/off</code>. The backend reads this and runs ipmitool to turn the server on/off.
+  Every few seconds the page refreshes/redirects to the home page to refresh the r610 stat. This program allows me to easily turn the
+  server on or off from any device on the local network. It also allows me to do so with just my keyboard. I can even add
+  <code>/on</code> or <code>/off</code> when selecting the url to quickly affect the server's power status. This program meets my needs
+  and I have found it very useful the past few days I have been using it.</p>
+  <img src="images/project_dell_power_program_finished.png" alt="finished product">
+</div>
